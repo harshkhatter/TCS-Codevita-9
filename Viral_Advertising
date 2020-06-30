@@ -1,0 +1,39 @@
+# https://www.hackerrank.com/challenges/strange-advertising/
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the viralAdvertising function below.
+def viralAdvertising(n):
+    
+    # initially take a variable 'adv' =0
+    adv = 0
+    # take temp = 5, as 5 members to coomunicate first
+    temp = 5
+
+    # run the iteration n times to get the commulative numbers
+    for i in range(n):            #i=0,    1,   2,  3
+        temp = floor(temp/2)            #temp will store floor value 
+        adv = adv + temp            #calculate commulative value
+        temp = temp * 3             # temp * 3
+        
+    # return answer as adv
+    return adv
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    result = viralAdvertising(n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+# https://www.hackerrank.com/challenges/strange-advertising/
